@@ -5,7 +5,7 @@ class Form extends Component {
 		return (
 			<div>
 				<form onSubmit={this.props.getFlightResults}>
-					<input type='text' name='orgin' placeholder='orgin airport code' />
+					<input type='text' name='origin' placeholder='origin airport code' />
 					<input
 						type='text'
 						name='destination'

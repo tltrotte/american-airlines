@@ -1,37 +1,25 @@
 import React, { Component } from "react";
 import Form from "./Form";
 
-class Results extends Component {
-	render() {
-		return (
-			<div>
-				{/* {this.props.orgin && this.props.destination && (
-					<p>Aircraft Model: {this.props.model}</p>
-				)}
-				{this.props.orgin && this.props.destination && (
-					<p>Flight Number: {this.props.flightNumber}</p>
-				)}
-				{this.props.orgin && this.props.destination && (
-					<p>Flight Duration: {this.props.locale}</p>
-				)}
-				{this.props.orgin && this.props.destination && (
-					<p>Orgin Airport: {this.props.orginCode}</p>
-				)}
-				{this.props.orgin && this.props.destination && (
-					<p>Orgin City {this.props.orginCity}</p>
-				)}
-				{this.props.orgin && this.props.destination && (
-					<p>Destination Airport: {this.props.destinationCode}</p>
-				)}
-				{this.props.orgin && this.props.destination && (
-					<p>Destination City {this.props.destinationCity}</p>
-				)}
-				{this.props.orgin && this.props.destination && (
-					<p>Total Distance: {this.props.distance}</p>
-				)} */}
-			</div>
-		);
-	}
-}
+const Results = ({ results }) => {
+	return (
+		<div>
+			<center>
+				<h1>Contact List</h1>
+			</center>
+			{results.map(results => (
+				<div class='card'>
+					<div class='card-body'>
+						<h5 class='card-title'>{results.flightNumber}</h5>
+						<h5 class='card-title'>{results.origin.code}</h5>
+						<h5 class='card-title'>{results.origin.city}</h5>
+						<h5 class='card-title'>{results.destination.code}</h5>
+						<h5 class='card-title'>{results.destination.city}</h5>
+					</div>
+				</div>
+			))}
+		</div>
+	);
+};
 
 export default Results;
