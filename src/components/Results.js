@@ -5,7 +5,7 @@ const Results = ({ results }) => {
 	return (
 		<div>
 			<center>
-				<h1>Contact List</h1>
+				<h1>American Airlines</h1>
 			</center>
 			{results.map(results => (
 				<div class='card'>
