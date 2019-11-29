@@ -39,7 +39,9 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<p>Hello</p>
+				<center>
+					<h1>American Airlines</h1>
+				</center>
 				<Form getFlightResults={this.getFlightResults} />
 				<Results results={this.state.results} error={this.state.erorr} />
 			</div>
