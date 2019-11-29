@@ -15,6 +15,7 @@ const Results = ({ results }) => {
 						<h5 class='card-title'>{results.origin.city}</h5>
 						<h5 class='card-title'>{results.destination.code}</h5>
 						<h5 class='card-title'>{results.destination.city}</h5>
+						<h5 class='card-title'>{results.duration.locale}</h5>
 					</div>
 				</div>
 			))}
