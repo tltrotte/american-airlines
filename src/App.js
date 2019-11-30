@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Form from "./components/Form";
 import Results from "./components/Results";
 import "./App.css";
+import Logo2 from "./Logo2.png";
 
 class App extends Component {
 	//Initial State of Flight Results
@@ -40,7 +41,11 @@ class App extends Component {
 		return (
 			<div>
 				<center>
-					<h1>American Airlines</h1>
+					<div className='header'>
+						<h1>
+							<img src={Logo2} alt='website logo' />
+						</h1>
+					</div>
 				</center>
 				<Form getFlightResults={this.getFlightResults} />
 				<Results results={this.state.results} error={this.state.erorr} />

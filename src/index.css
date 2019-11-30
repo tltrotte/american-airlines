@@ -1,13 +1,55 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+/* Form Styling */
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	max-width: 30rem;
+	margin: 0 auto;
+	padding: 1.5rem 2rem;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+.form-group {
+	position: relative;
+	padding-top: 1.5rem;
+}
+input {
+	display: flex;
+	width: 100%;
+}
+/* Results Styling */
+.cards {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	max-width: 30rem;
+	margin: 0 auto;
+	padding: 1.5rem 2rem;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+	margin: 1.5rem 2rem;
+}
+/* Main App Styling */
+img {
+	width: 425px;
+
+	padding: 1rem 0rem 0rem 0rem;
+}
+.header {
+	max-height: 50%;
 }
