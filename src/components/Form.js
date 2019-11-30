@@ -5,7 +5,9 @@ class Form extends Component {
 		return (
 			<div>
 				<center>
+					{/* Form handled once submit button is pressed and props available for main App */}
 					<form onSubmit={this.props.getFlightResults}>
+						<h4>Flight Tracker</h4>
 						<div className='form-group'>
 							<input
 								type='text'

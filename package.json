@@ -4,13 +4,18 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "chai": "^4.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "jquery": "^3.4.1",
+    "mocha": "^6.2.2",
     "popper.js": "^1.16.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0",
-    "reactstrap": "^8.1.1"
+    "reactstrap": "^8.1.1",
+    "sinon": "^7.5.0"
   },
   "scripts": {
     "start": "react-scripts start",

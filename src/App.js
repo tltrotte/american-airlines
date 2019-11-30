@@ -10,7 +10,7 @@ class App extends Component {
 		results: [],
 		error: undefined
 	};
-
+	// need to add componentDidMount()for catching unavailable airports and throw error
 	//Function to send GET request to API using the event handled on Form submission
 	getFlightResults = async e => {
 		const origin = e.target.elements.origin.value;
@@ -21,7 +21,7 @@ class App extends Component {
 		const flightengine_call = await fetch(
 			`https://american-flight-engine-2019.herokuapp.com/flights?date=${travelDate}&origin=${origin}&destination=${destination}`
 		);
-		//Paring to JSON
+		//Parsing to JSON
 		const flightdata = await flightengine_call.json();
 		console.log(flightdata);
 		//Updating State
