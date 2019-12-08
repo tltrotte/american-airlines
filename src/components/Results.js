@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Card, CardTitle, CardText } from "reactstrap";
+import Form from "./Form";
 
 const Results = ({ results }) => {
 	return (
 		<div>
 			<center>
-				{/* // .map function looping throuhg each array and grabbing specified item */}
+				<p>Hello World</p>
 				{results.map(results => (
 					<Card
 						className='cards'
@@ -17,16 +18,13 @@ const Results = ({ results }) => {
 						color='primary'
 					>
 						<CardTitle>
-							{/* Attempting to grab the props of Origin and Destination to throw "Error" When nothing is entered in input and search button is pressed */}
-							<h4>Flight Number #{results.flightNumber}</h4>
+							<h4>Flight Number {results.flightNumber}</h4>
 						</CardTitle>
 						<CardText>
 							<h5>
-								{/* {this.props.orgin} */}
 								Departs from {results.origin.city} ({results.origin.code}) to
-							</h5>{" "}
+							</h5>
 							<h5>
-								{/* {this.props.destination} */}
 								{results.destination.city} ({results.destination.code})
 							</h5>
 							Approximate flight duration:

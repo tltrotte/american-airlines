@@ -5,38 +5,6 @@ import "./App.css";
 import Logo2 from "./Logo2.png";
 
 class App extends Component {
-	//Initial State of Flight Results
-	state = {
-		results: [],
-		error: undefined
-	};
-	// need to add componentDidMount()for catching unavailable airports and throw error
-	//Function to send GET request to API using the event handled on Form submission
-	getFlightResults = async e => {
-		const origin = e.target.elements.origin.value;
-		const destination = e.target.elements.destination.value;
-		const travelDate = e.target.elements.travelDate.value;
-		e.preventDefault();
-		//API Get request
-		const flightengine_call = await fetch(
-			`https://american-flight-engine-2019.herokuapp.com/flights?date=${travelDate}&origin=${origin}&destination=${destination}`
-		);
-		//Parsing to JSON
-		const flightdata = await flightengine_call.json();
-		console.log(flightdata);
-		//Updating State
-		if (origin && destination) {
-			this.setState({
-				results: flightdata,
-				error: ""
-			});
-		} else {
-			this.setState({
-				results: undefined,
-				error: "No Results Found"
-			});
-		}
-	};
 	render() {
 		return (
 			<div>
@@ -47,8 +15,7 @@ class App extends Component {
 						</h1>
 					</div>
 				</center>
-				<Form getFlightResults={this.getFlightResults} />
-				<Results results={this.state.results} error={this.state.erorr} />
+				<Form />
 			</div>
 		);
 	}
