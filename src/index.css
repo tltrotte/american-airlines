@@ -44,6 +44,10 @@ input {
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 	margin: 1.5rem 2rem;
 }
+.validationError {
+	color: red;
+	text-transform: uppercase;
+}
 /* Main App Styling */
 img {
 	width: 425px;

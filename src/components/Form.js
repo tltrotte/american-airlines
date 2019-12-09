@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
 import Results from "./Results";
+import DatePicker from "react-datepicker";
 
 const initialState = {
 	results: [],
@@ -15,23 +16,31 @@ const initialState = {
 class Form extends Component {
 	state = initialState;
 
-	handleChange = event => {
-		console.log(event.target.destination);
+	handleChange = e => {
+		console.log(e.target.destination);
 		this.setState({
-			[event.target.name]: event.target.value
+			[e.target.name]: e.target.value
 		});
 	};
+	verifyAlpha(e) {
+		const re = /[a-fA-F]+/g;
+		if (!re.test(e.key)) {
+			e.preventDefault();
+		}
+	}
 	getFlightResults = async e => {
 		const origin = this.state.origin;
 		const destination = this.state.destination;
 		const travelDate = this.state.travelDate;
 		const flightengine_call = await fetch(
-			`https://american-flight-engine-2019.herokuapp.com/flights?date=${travelDate}&origin=${origin}&destination=${destination}`
-			// `http://localhost:8000/flights?originCity=${origin}&destinationCity=${destination}&departureDate=${travelDate}`
+			// `https://american-flight-engine-2019.herokuapp.com/flights?date=${travelDate}&origin=${origin}&destination=${destination}`
+			`http://localhost:8000/flights?originCity=${origin}&destinationCity=${destination}&departureDate=${travelDate}`
+			// `http://localhost:8000/flights?originCity=New York City&destinationCity=Chicago&departureDate=2019-12-14`
 		);
 		//Parsing to JSON
 		const flightdata = await flightengine_call.json();
 		console.log(flightdata);
+		//TODO "results" state is not updating - API is being called
 		this.setState({ results: flightdata });
 	};
 
@@ -55,8 +64,8 @@ class Form extends Component {
 		}
 		return true;
 	};
-	handleSubmit = event => {
-		event.preventDefault();
+	handleSubmit = e => {
+		e.preventDefault();
 
 		const isValid = this.validate();
 
@@ -81,6 +90,7 @@ class Form extends Component {
 								value={this.state.origin}
 								placeholder='Origin City'
 								onChange={this.handleChange}
+								onKeyPress={e => this.verifyAlpha(e)}
 							/>
 							<div className='validationError'>{this.state.originError}</div>
 							<input
@@ -89,10 +99,12 @@ class Form extends Component {
 								value={this.state.destination}
 								placeholder='Destination City'
 								onChange={this.handleChange}
+								onKeyPress={e => this.verifyAlpha(e)}
 							/>
 							<div className='validationError'>
 								{this.state.destinationError}
 							</div>
+							{/* TODO format YYYY/MM/DD as well as maxLength */}
 							<input
 								type='date'
 								name='travelDate'
